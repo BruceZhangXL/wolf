@@ -1,3 +1,5 @@
+使用maven构建的完整项目，下载后以maven项目导入开发环境，运行Application.java即可启动。
+
 <h2>脚手架</h2>
 构建：maven<br>
 基础：spring-boot<br>
