@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.wolf</groupId>
+		<artifactId>wolf</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>wolf-web</artifactId>
+	<packaging>war</packaging>
+	<name>wolf-web Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+		<dependency>
+	  		<groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-web</artifactId>
+		    <exclusions>
+		        <exclusion>
+		            <groupId>org.springframework.boot</groupId>
+		            <artifactId>spring-boot-starter-tomcat</artifactId>
+		        </exclusion>
+		    </exclusions>
+  		</dependency>
+  		
+  			<dependency>  
+    			<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-logging</artifactId>
+			</dependency>
+		
+     <!-- swagger start -->
+     <!-- <dependency>
+         <groupId>io.springfox</groupId>
+         <artifactId>springfox-swagger2</artifactId>
+         <version>2.6.1</version>
+     </dependency>
+
+     <dependency>
+          <groupId>io.springfox</groupId>
+          <artifactId>springfox-swagger-ui</artifactId>
+          <version>2.6.1</version>
+     </dependency> -->
+      <!-- swagger end -->
+     
+     <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+      </dependency>
+       <dependency>
+                     <groupId>org.apache.tomcat.embed</groupId>
+                     <artifactId>tomcat-embed-jasper</artifactId>
+                     <scope>provided</scope>
+       </dependency>
+  	
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.wolf</groupId>
+			<artifactId>wolf-service</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>wolf-web</finalName>
+	</build>
+</project>

@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.wolf</groupId>
+		<artifactId>wolf</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>wolf-service</artifactId>
+	<name>wolf-service</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.wolf</groupId>
+			<artifactId>wolf-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.wolf</groupId>
+			<artifactId>wolf-dao</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.wolf</groupId>
+			<artifactId>wolf-domain</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.wolf</groupId>
+			<artifactId>wolf-rpc</artifactId>
+		</dependency>
+		
+			<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>  
+    		 <groupId>org.springframework.boot</groupId>  
+   			 <artifactId>spring-boot-starter-aop</artifactId>  
+		</dependency>
+		
+		  <dependency>
+     		 	<groupId>org.springframework.boot</groupId>
+      			<artifactId>spring-boot-starter-security</artifactId>
+   		  </dependency> 
+	</dependencies>
+</project>

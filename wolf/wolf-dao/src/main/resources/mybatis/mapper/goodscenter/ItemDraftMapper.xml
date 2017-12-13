@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.htd.vms.dao.ItemDraftMapper" >
+  <select id="selectByPrimaryKey" resultType="java.lang.String" parameterType="java.lang.Long" >
+    select 
+    item_name
+    from item_draft
+    where item_id = #{itemId,jdbcType=BIGINT}
+  </select>
+  
+  <select id="selectByItemDraftId" resultType="java.lang.String" parameterType="java.lang.Long" >
+    select 
+    item_name
+    from item_draft
+    where item_draft_id = #{itemDraftId,jdbcType=BIGINT}
+  </select>
+  
+  <update id="updateItem">
+	update item_draft set modify_name=#{modifyName} where item_draft_id=#{itemDraftId}
+  </update>
+</mapper>

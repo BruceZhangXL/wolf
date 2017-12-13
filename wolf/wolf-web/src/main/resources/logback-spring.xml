@@ -1,0 +1,42 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<configuration>
+	
+	<!-- <springProperty scope="context" name="loggingLevel" source="logging.level"/> -->
+    <springProperty scope="context" name="logPath" source="logging.path"/>
+    <springProperty scope="context" name="serverName" source="server.name"/>
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date|%thread|%X{invokeNo}|%level|%logger{0}|%msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="rollinginfoFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logPath}/${serverName}/${serverName}.log</file>
+   		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${logPath}/${serverName}/${serverName}.%i.log</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>10</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>500MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%date|%thread|%X{invokeNo}|%level|%logger{0}|%msg%n</pattern>
+		</encoder>
+		 
+	</appender>
+	
+	<!-- <logger name="cn.htd" level="${loggingLevel}">
+		<appender-ref ref="rollinginfoFile" />
+	</logger>
+	
+	mybatis
+	<logger name="org.apache.ibatis" level="${loggingLevel}">
+		<appender-ref ref="rollinginfoFile" />
+	</logger> -->
+	
+	<root level="${loggingLevel}">
+		<appender-ref ref="rollinginfoFile" />
+		<appender-ref ref="console" />
+	</root>
+</configuration>
