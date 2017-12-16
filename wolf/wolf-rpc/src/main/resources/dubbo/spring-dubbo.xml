@@ -5,8 +5,8 @@
         http://code.alibabatech.com/schema/dubbo
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         ">
-    <!-- <dubbo:application name="${server.name}"/>
+     <dubbo:application name="${server.name}"/>
     <dubbo:protocol name="dubbo" port="${dubbo.port}" />
 	<dubbo:provider timeout="3000" threadpool="fixed" threads="1000" accepts="1000" />
-    <dubbo:registry id="registry" protocol="zookeeper" address="${zookeeper.address}" /> -->
+    <dubbo:registry id="registry" protocol="zookeeper" address="${zookeeper.address}" />
 </beans>

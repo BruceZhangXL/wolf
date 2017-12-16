@@ -15,7 +15,7 @@ public class WolfWebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers("/resources/**","/index/**","/login/**","/swagger*/**","/webjars/**","/v2/**").permitAll()
+		.antMatchers("/resources/**","/dubbo/**","/login/**","/swagger*/**","/webjars/**","/v2/**").permitAll()
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login").permitAll().successHandler(loginSuccessHandler());
 	}
